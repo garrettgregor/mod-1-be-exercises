@@ -1,5 +1,5 @@
 class Wizard
-  attr_reader :name, :bearded, :rested
+  attr_reader :name, :bearded, :rested, :spells_cast
 
   def initialize(name, bearded: true)
     @name = name
