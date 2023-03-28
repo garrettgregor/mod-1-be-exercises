@@ -8,4 +8,24 @@ RSpec.describe Potluck do
 
     expect(potluck).to be_an_instance_of(Potluck)
   end
+  
+  it "contains a date and no dishes" do
+    potluck = Potluck.new("7-13-18")
+    
+    expect(potluck.date).to eq("7-13-18")
+    expect(potluck.dishes).to eq([])
+  end
+  
+  it "contains a date and no dishes" do
+    potluck = Potluck.new("7-13-18")
+    couscous_salad = Dish.new("Couscous Salad", :appetizer)
+    cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
+
+    potluck.add_dish(couscous_salad)
+    potluck.add_dish(cocktail_meatballs)
+    potluck.dishes
+    
+    expect(potluck.date).to eq("7-13-18")
+    expect(potluck.dishes).to eq(["Couscous Salad", "Cocktail Meatballs"])
+  end
 end
