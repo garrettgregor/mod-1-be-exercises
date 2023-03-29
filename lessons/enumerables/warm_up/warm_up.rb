@@ -4,13 +4,27 @@
 kardashians = ["kris", "kim", "kourtney", "khloe", "rob"]
 
 def upcase_names(names)
- # your code here
+  # your code here
+  arr = []
+  names.each do |name|
+    arr << name.upcase
+  end
+  arr
 end 
 
 p upcase_names(kardashians)
 
 # should return ["KRIS", "KIM", "KOURTNEY", "KHLOE", "ROB"]
 
+# ## .find enumerables
+# words = ["pretzel", "capricious", "berry", "unicorn", "bag", "apple", "festering", "pencil", "unicorn"]
+#   return_value = words.find do |word|
+#     word.length == 7
+#   end
+
+# p return_value
+
+# # pretzel
 
 
 
@@ -23,6 +37,18 @@ pets = ["Brutus", "Lucky", "Goldie", "Pepper", "Odie"]
 
 def names_ending_in_ie(names)
  # your code here
+ arr = []
+ names.each do |name|
+  # arr << name if name.include?("die")
+  # # if name.include?("die")
+  # #   arr << name
+  # # end
+  arr << name if name.end_with?("ie")
+  # if name.end_with?("ie")
+  #   arr << name
+  # end
+ end
+ arr
 end 
 
 p names_ending_in_ie(pets)

@@ -4,6 +4,9 @@
 
 def capitalize
     names = ["alice", "bob", "charlie"]
+    return_value = names.map do |name|
+        name.capitalize
+    end
 
     # Your code goes here
 
@@ -12,15 +15,21 @@ end
 
 def doubles
     numbers = [1, 2, 3, 4, 5]
-
+    return_value = numbers.map do |number|
+        number * 2
+    end
+    
     # Your code goes here
-
+    
     # expected return value is [2, 4, 6, 8, 10]
 end
 
 def squares
     numbers = [1, 2, 3, 4, 5]
-
+    return_value = numbers.map do |number|
+        number ** 2
+    end
+    
     # Your code goes here
 
     # expected return value is [1, 4, 9, 16, 25]
@@ -67,9 +76,9 @@ def trim_last_letter
 end
 
 
-# p capitalize
-# p doubles
-# p squares
+p capitalize
+p doubles
+p squares
 # p lengths
 # p normalize_zip_codes
 # p backwards
