@@ -19,6 +19,28 @@ class Potluck
       dish.category == category #if this statement is true, select will select the dish and put it into an array, otherwise it won't do anything
     end
   end
+
+  def menu
+    app_array = get_all_from_category(:appetizer).map do |dish|
+      dish.name
+    end.sort
+    entres_array = get_all_from_category(:entre).map do |dish|
+      dish.name
+    end.sort
+    dessert_array = get_all_from_category(:dessert).map do |dish|
+      dish.name
+    end.sort
+
+    {
+      appetizers: app_array, #app_array.sort would be the same thing that's on line 26
+      entres: entres_array,
+      desserts: dessert_array
+    }
+  end
+
+  def ratio
+    
+  end
   
   # def get_all_from_category(category)
   #   dish_arrays.each do |dish_array|
