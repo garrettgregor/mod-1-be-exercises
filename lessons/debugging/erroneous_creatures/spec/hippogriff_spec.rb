@@ -34,7 +34,7 @@ RSpec.describe Hippogriff do
   it "when it flies it collects a unique moonrock" do
     hippogriff = Hippogriff.new("jane", :magenta)
     rock = Moonstone.new("sparkly")
-
+    
     hippogriff.fly(rock)
 
     expect(hippogriff.moonrocks.count).to eq(1)
