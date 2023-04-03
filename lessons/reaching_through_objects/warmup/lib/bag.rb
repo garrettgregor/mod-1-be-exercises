@@ -1,22 +1,26 @@
 class Bag
-  attr_reader :count,
-              :candies
+  attr_reader :candies
   def initialize
-    @count = 0
     @candies = []
   end
 
   def empty?
-    if @count == 0
-      true
-    else
-      false
-    end
+    count == 0
+    ## Same as...
+    # if count == 0
+    #   true
+    # else
+    #   false
+    # end
+  end
+
+  def count
+    @candies.length
   end
 
   def add_candy(candy)
     @candies << candy
-    @count += 1
+    # @count += 1
   end
 
   def contains?(candy)
