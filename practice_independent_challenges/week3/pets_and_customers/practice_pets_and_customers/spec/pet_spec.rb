@@ -15,6 +15,12 @@ RSpec.describe Pet do
     expect(samson.type).to eq(:dog)
     expect(samson.age).to eq(3)
   end
+  
+  it "checks to see if it was fed" do
+    samson = Pet.new({name: "Samson", type: :dog, age: 3})    
+
+    expect(samson.fed?).to be false
+  end
 end
 
 # samson.fed?
