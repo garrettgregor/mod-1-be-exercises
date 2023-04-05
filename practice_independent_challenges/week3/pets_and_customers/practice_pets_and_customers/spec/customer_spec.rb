@@ -21,27 +21,19 @@ RSpec.describe Customer do
 
     expect(joel.pets).to eq([samson, lucy])
   end
+  
+  it "pays a fee for adopting pets" do
+    joel = Customer.new("Joel", 2)
+    samson = Pet.new({name: "Samson", type: :dog, age: 3})
+    lucy = Pet.new({name: "Lucy", type: :cat, age: 12}) 
+    joel.adopt(samson)
+    joel.adopt(lucy)
+
+    expect(joel.outstanding_balance).to eq(0)
+
+    joel.charge(15)
+    joel.charge(7)    
+    
+    expect(joel.outstanding_balance).to eq(22)
+  end
 end
-
-# samson = Pet.new({name: "Samson", type: :dog, age: 3})
-# # => #<Pet:0x00007ff8dc1f86a0...>
-
-# lucy = Pet.new({name: "Lucy", type: :cat, age: 12})    
-# # => #<Pet:0x00007ff8dc93e108...>
-
-# joel.adopt(samson)
-
-# joel.adopt(lucy)    
-
-# joel.pets
-# # => [#<Pet:0x00007ff8dc1f86a0...>, #<Pet:0x00007ff8dc93e108...>]
-
-# joel.outstanding_balance
-# # => 0
-
-# joel.charge(15)
-
-# joel.charge(7)    
-
-# joel.outstanding_balance
-# # => 22
