@@ -1,3 +1,5 @@
+# This would enable the manager to inherit from employees parent
+# class Employee < Parent
 class Employee
   attr_reader :name, :id
 
