@@ -14,4 +14,10 @@ class Curator
   def add_artist(artist)
     @artists << artist
   end
+
+  def find_artist_by_id(id_number)
+    @artists.find do |artist|
+      artist.id == id_number
+    end
+  end
 end
