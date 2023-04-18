@@ -6,4 +6,12 @@ class Activity
     @name         = name
     @participants = Hash.new(0)
   end
+
+  def add_participant(name, paid)
+    @participants[name] += paid
+  end
+
+  def total_cost
+    @participants.values.sum
+  end
 end
