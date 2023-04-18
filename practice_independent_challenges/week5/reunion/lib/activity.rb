@@ -27,4 +27,5 @@ class Activity
     end
     each_owed
   end
+
 end
