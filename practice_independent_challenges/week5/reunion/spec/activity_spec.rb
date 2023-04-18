@@ -54,4 +54,18 @@ RSpec.describe Activity do
       expect(activity.split).to eq(30)
     end
   end
+  
+  describe "#owed" do
+    it "can calculate the difference from the amount paid to the split as the amount owed" do
+      activity = Activity.new("Brunch")
+      activity.add_participant("Maria", 20)
+      activity.add_participant("Luther", 40)
+      
+      expected = {"Maria" => 10, "Luther" => -10}
+
+      expect(activity.total_cost).to eq(60)
+      expect(activity.split).to eq(30)
+      expect(activity.owed).to eq(expected)
+    end
+  end
 end

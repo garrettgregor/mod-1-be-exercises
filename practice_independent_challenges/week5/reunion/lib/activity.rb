@@ -18,4 +18,13 @@ class Activity
   def split
     total_cost / @participants.length
   end
+
+  def owed
+    each_owed = Hash.new(0)
+    @participants.each do |participant, paid|
+      owed = split - paid
+      each_owed[participant] = owed
+    end
+    each_owed
+  end
 end
