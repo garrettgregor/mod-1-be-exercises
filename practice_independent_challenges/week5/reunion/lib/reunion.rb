@@ -27,7 +27,8 @@ class Reunion
     breakout
   end
 
-  def invoice
-    
+  def invoice(participant)
+    amount = breakout[participant]
+    "INVOICE\n" + "#{participant}.....$#{amount}"
   end
 end
