@@ -16,4 +16,14 @@ class Reunion
       activity.total_cost
     end
   end
+
+  def balance
+    breakdown = Hash.new(0)
+    @activities.each do |activity|
+      activity.owed.each do |name, amount_owed|
+        breakdown[name] += amount_owed
+      end
+    end
+    breakdown
+  end
 end
