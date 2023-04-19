@@ -41,15 +41,21 @@ RSpec.describe Reunion do
     end
   end
 
-  describe "#participant_total_cost" do
-    it "tell us the total cost of each participant at the reunion" do
+  describe "#breakout" do
+    it "tell us the how much each participant owes in total for the reunion" do
       reunion = Reunion.new("1406 BE")
       activity1 = Activity.new("Brunch")
       activity1.add_participant("Maria", 20)
       activity1.add_participant("Luther", 40)
       reunion.add_activity(activity1)
 
+      expected = {
+        "Maria" => 10,
+        "Luther"=> -10
+      }
+
       expect(reunion.total_cost).to eq(60)
+      expect(reunion.breakout).to eq(expected)
 
       activity2 = Activity.new("Lunch")
       activity2.add_participant("Maria", 20)
@@ -62,7 +68,7 @@ RSpec.describe Reunion do
       }
 
       expect(reunion.total_cost).to eq(120)
-      expect(reunion.balance).to eq(expected)
+      expect(reunion.breakout).to eq(expected)
     end
   end
 end

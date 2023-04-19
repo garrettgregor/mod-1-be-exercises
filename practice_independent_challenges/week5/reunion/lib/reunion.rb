@@ -17,13 +17,17 @@ class Reunion
     end
   end
 
-  def balance
-    breakdown = Hash.new(0)
+  def breakout
+    breakout = Hash.new(0)
     @activities.each do |activity|
       activity.owed.each do |name, amount_owed|
-        breakdown[name] += amount_owed
+        breakout[name] += amount_owed
       end
     end
-    breakdown
+    breakout
+  end
+
+  def invoice
+    
   end
 end
