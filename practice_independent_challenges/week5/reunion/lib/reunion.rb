@@ -31,4 +31,11 @@ class Reunion
     amount = breakout[participant]
     "INVOICE\n" + "#{participant}.....$#{amount}"
   end
+
+  def detailed_breakout
+    detailed_breakout = Hash.new(0)
+    @activities.each do |activity|
+      require 'pry'; binding.pry
+    end
+  end
 end

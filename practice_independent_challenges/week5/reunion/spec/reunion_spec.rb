@@ -92,4 +92,32 @@ RSpec.describe Reunion do
       expect(reunion.invoice("Luther")).to eq(invoice_l)
     end
   end
+
+  describe "#detailed breakout" do
+    it "creates a detiled breakout for each participant" do
+      reunion = Reunion.new("1406 BE")
+      activity1 = Activity.new("Brunch")
+      activity1.add_participant("Maria", 20)
+      activity1.add_participant("Luther", 40)
+      reunion.add_activity(activity1)
+
+      activity2 = Activity.new("Lunch")
+      activity2.add_participant("Maria", 20)
+      activity2.add_participant("Luther", 40)
+      reunion.add_activity(activity2)
+
+      expected = {
+        "Maria" => {
+          acitivities => [acitivity1, acitivity2]
+          activity2 =>
+
+        }
+        ,
+        "Luther" =>
+      }
+
+      reunion.detailed_breakout
+
+    end
+  end
 end
