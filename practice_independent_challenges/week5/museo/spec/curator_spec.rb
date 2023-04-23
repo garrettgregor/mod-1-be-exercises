@@ -6,25 +6,33 @@ RSpec.describe Curator do
       curator = Curator.new
 
       expect(curator.photographs).to eq([])
+    end
+  end
 
-      # photo_1 = Photograph.new({
-      #     id: "1",
-      #     name: "Rue Mouffetard, Paris (Boy with Bottles)",
-      #     artist_id: "1",
-      #     year: "1954"
-      # })
+  describe "#add_photograph" do
+    it "can add a photo to the collection of photographs" do
+      curator = Curator.new
 
-      # photo_2 = Photograph.new({
-      #     id: "2",
-      #     name: "Moonrise, Hernandez",
-      #     artist_id: "2",
-      #     year: "1941"
-      # })
+      expect(curator.photographs).to eq([])
 
-      # curator.add_photograph(photo_1)
-      # curator.add_photograph(photo_2)
+      photo_1 = Photograph.new({
+          id: "1",
+          name: "Rue Mouffetard, Paris (Boy with Bottles)",
+          artist_id: "1",
+          year: "1954"
+      })
 
-      # expect(curator.photographs).to eq([photo, photo_2])
+      photo_2 = Photograph.new({
+          id: "2",
+          name: "Moonrise, Hernandez",
+          artist_id: "2",
+          year: "1941"
+      })
+
+      curator.add_photograph(photo_1)
+      curator.add_photograph(photo_2)
+
+      expect(curator.photographs).to eq([photo, photo_2])
 
       # expect(curator.artists).to eq([])
 
