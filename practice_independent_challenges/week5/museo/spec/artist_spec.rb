@@ -20,7 +20,24 @@ RSpec.describe Photograph do
       expect(artist.born).to eq("1902")
       expect(artist.died).to eq("1984")
       expect(artist.country).to eq("United States")
-      # expect(artist.age_at_death).to eq(82)
+    end
+  end
+
+  describe "#age_at_death" do
+    it "calculates the age at death" do
+      attributes = {
+        id: "2",
+        name: "Ansel Adams",
+        born: "1902",
+        died: "1984",
+        country: "United States"
+      }
+
+      artist = Artist.new(attributes)
+
+      expect(artist.born).to eq("1902")
+      expect(artist.died).to eq("1984")
+      expect(artist.age_at_death).to eq(82)
     end
   end
 end
