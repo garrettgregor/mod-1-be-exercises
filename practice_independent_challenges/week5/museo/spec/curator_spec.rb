@@ -63,7 +63,7 @@ RSpec.describe Curator do
   end
 
   describe "#artists" do
-    it "has a list of artists in the collection of photographs" do
+    it "has a list of artists" do
       curator = Curator.new
 
       expect(curator.photographs).to eq([])
@@ -85,7 +85,7 @@ RSpec.describe Curator do
       expect(curator.artists).to eq([])
     end
 
-    xit "has a list of artists in the collection of photographs" do
+    it "has a list of artists in the collection of photographs" do
       curator = Curator.new
 
       expect(curator.photographs).to eq([])
@@ -107,29 +107,28 @@ RSpec.describe Curator do
       curator.add_photograph(photo_1)
       curator.add_photograph(photo_2)
 
-      # expect(curator.artists).to eq([])
+      expect(curator.artists).to eq([])
 
-      # artist_1 = Artist.new({
-      #     id: "1",
-      #     name: "Henri Cartier-Bresson",
-      #     born: "1908",
-      #     died: "2004",
-      #     country: "France"
-      # })
+      artist_1 = Artist.new({
+          id: "1",
+          name: "Henri Cartier-Bresson",
+          born: "1908",
+          died: "2004",
+          country: "France"
+      })
 
-      # artist_2 = Artist.new({
-      #     id: "2",
-      #     name: "Ansel Adams",
-      #     born: "1902",
-      #     died: "1984",
-      #     country: "United States"
-      # })
+      artist_2 = Artist.new({
+          id: "2",
+          name: "Ansel Adams",
+          born: "1902",
+          died: "1984",
+          country: "United States"
+      })
 
-      # curator.add_artist(artist_1)
+      curator.add_artist(artist_1)
+      curator.add_artist(artist_2)
 
-      # curator.add_artist(artist_2)
-
-      # expect(curator.artists).to eq([artist_1, artist_2])
+      expect(curator.artists).to eq([artist_1, artist_2])
 
       # expect(curator.find_artist_by_id("1")).to eq(artist_1)
     end
