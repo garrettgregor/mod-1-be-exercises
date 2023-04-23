@@ -32,7 +32,7 @@ RSpec.describe Curator do
       curator.add_photograph(photo_1)
       curator.add_photograph(photo_2)
 
-      expect(curator.photographs).to eq([photo, photo_2])
+      expect(curator.photographs).to eq([photo_1, photo_2])
 
       # expect(curator.artists).to eq([])
 
